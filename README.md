@@ -2,7 +2,7 @@
 ## 4월 12일
 tomcat 10 버전을 다운그래이드 하는 김에 원래 demo 프로젝트 삭제 및 현재 StudyServletJSP 프로젝트로 변경 <br>
 버전 9로 다운그래이드 중 인텔리제이 에러로 인해 이클립스로 ide 변경 <br>
-IDE 변경한 에러는 인텔리 제이에서 서블릿 매핑 중 서블릿 파일에 @WebServlet() 매핑이  에러로 인해 안되서 javax.servlet.annotation이 cannot find symbol 이라 에러가 뜸
+IDE 변경한 에러는 인텔리 제이에서 서블릿 매핑 중 서블릿 파일에 @WebServlet() 매핑이  에러로 인해 안되서 <br> javax.servlet.annotation이 cannot find symbol 이라 에러가 뜸
 
 ## 4월 11일
 웹 컨테이너 구조 <br>
