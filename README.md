@@ -1,27 +1,38 @@
-# ì„œë¸”ë¦¿ ë° jsp ê³µë¶€
-## 4ì›” 12ì¼
-tomcat 10 ë²„ì „ì„ ë‹¤ìš´ê·¸ëž˜ì´ë“œ í•˜ëŠ” ê¹€ì— ì›ëž˜ demo í”„ë¡œì íŠ¸ ì‚­ì œ ë° í˜„ìž¬ StudyServletJSP í”„ë¡œì íŠ¸ë¡œ ë³€ê²½ <br>
-ë²„ì „ 9ë¡œ ë‹¤ìš´ê·¸ëž˜ì´ë“œ ì¤‘ ì¸í…”ë¦¬ì œì´ ì—ëŸ¬ë¡œ ì¸í•´ ì´í´ë¦½ìŠ¤ë¡œ ide ë³€ê²½ <br>
-IDE ë³€ê²½í•œ ì—ëŸ¬ëŠ” ì¸í…”ë¦¬ ì œì´ì—ì„œ ì„œë¸”ë¦¿ ë§¤í•‘ ì¤‘ ì„œë¸”ë¦¿ íŒŒì¼ì— @WebServlet() ë§¤í•‘ì´  ì—ëŸ¬ë¡œ ì¸í•´ ì•ˆë˜ì„œ <br> javax.servlet.annotationì´ cannot find symbol ì´ë¼ ì—ëŸ¬ê°€ ëœ¸
+# ¼­ºí¸´ ¹× jsp °øºÎ
+## 4¿ù 15ÀÏ Servlet ¸ÊÇÎ, github error
+servlet ¸ÊÇÎ : ¼­ºí¸´À» ±¸ºÐÇÏ±â À§ÇØ path¸¦ °£´ÜÇÏ°Ô ¿øÇÏ´Âµ¥·Î ¸¸µå´Â°Í <br>
+¸ÊÇÎÀ» ÇÏ´Â ÀÌÀ¯´Â º¸¾È¿¡ Ãë¾àÇÏ°í º¹ÀâÇÑ urlÀ» °£°áÇÏ°Ô ¹Ù²Ü¼ö ÀÖ¾î¼­
+À¥À» ¸¸µé¶§ jsp¿Í servletÀ» ¼¯¾î¼­ ¸¸µå´Â°Ô ÁÁÀ½ jsp ´Â view servlet ÄÁÆ®·Ñ·¯ ¸ðµ¨ µî À¸·Î ÁÖ·Î ¸¸µë<br>
+web.xml ÆÄÀÏ¿¡¼­ ¸ÊÇÎÁß Àß¸øÇÏ¸é ÅèÄÏ¼­¹ö°¡ ½ÃÀÛÇÏÁö ¾Ê´Â ¿À·ù°¡ ÀÖÀ½(failed to start) <br>
+¿¡·¯°¡ ¶á ÀÌÀ¯ : servlet-mapping > url-pattern ¾È¿¡ '/'¸¦ ¾²Áö ¾Ê¾Æ ¿¡·¯°¡ ¶ä <br>
+<br>
+httpServlet Å¬·¡½º°¡ Áß¿äÇÏ´Ù!! <br>
+requset , response : doGet , doPost ¸Þ¼Òµå¾È¿¡ 2°¡Áö º¯¼ö¸¦ ÀÌ¿ëÇØ ¸¸µé°Í 
+github Ä¿¹Ô ¿¡·¯ ÇØ¼­ ¾ÆÁÖ °£´ÜÇÑ ¼­ºí¸´ ÆÄÀÏ¸¸ ¸¸µé¾î¼­ ¾Æ¿¹ ¿ø·¡ ÇÁ·ÎÁ§Æ® Áö¿ì°í ´Ù½Ã clone ÇØ¼­ ½ÃÀÛ
 
-## 4ì›” 11ì¼
-ì›¹ ì»¨í…Œì´ë„ˆ êµ¬ì¡° <br>
-í˜„ìž¬ Servlet êµ¬ë™ì¸ ì•ˆë¨ main ë””ë ‰í† ë¦¬ì•ˆì— .java íŒŒì¼ì´ .class ë¡œ ì•ˆë³€í•˜ì—¬ì„œ ê·¸ëŸ¬ëŠ”ê²ƒ ê°™ìŒ 
+## 4¿ù 12ÀÏ
+tomcat 10 ¹öÀüÀ» ´Ù¿î±×·¡ÀÌµå ÇÏ´Â ±è¿¡ ¿ø·¡ demo ÇÁ·ÎÁ§Æ® »èÁ¦ ¹× ÇöÀç StudyServletJSP ÇÁ·ÎÁ§Æ®·Î º¯°æ <br>
+¹öÀü 9·Î ´Ù¿î±×·¡ÀÌµå Áß ÀÎÅÚ¸®Á¦ÀÌ ¿¡·¯·Î ÀÎÇØ ÀÌÅ¬¸³½º·Î ide º¯°æ <br>
+IDE º¯°æÇÑ ¿¡·¯´Â ÀÎÅÚ¸® Á¦ÀÌ¿¡¼­ ¼­ºí¸´ ¸ÅÇÎ Áß ¼­ºí¸´ ÆÄÀÏ¿¡ @WebServlet() ¸ÅÇÎÀÌ  ¿¡·¯·Î ÀÎÇØ ¾ÈµÇ¼­ <br> javax.servlet.annotationÀÌ cannot find symbol ÀÌ¶ó ¿¡·¯°¡ ¶ä
 
-Servletì€ java íŒŒì¼ì„ ì´ìš©í•´ì„œ jspì™€ ê°™ì€ ë™ìž‘ì„ í•œë‹¤ 
+## 4¿ù 11ÀÏ
+À¥ ÄÁÅ×ÀÌ³Ê ±¸Á¶ <br>
+ÇöÀç Servlet ±¸µ¿ÀÎ ¾ÈµÊ main µð·ºÅä¸®¾È¿¡ .java ÆÄÀÏÀÌ .class ·Î ¾Èº¯ÇÏ¿©¼­ ±×·¯´Â°Í °°À½ 
 
-<br>jsp íŒŒì¼ì„ í†µí•´ request(ìš”ì²­)ì„ í•˜ë©´ ì›¹ ì»¨í…Œì´ë„ˆ(í†°ì¼“)ì´ ì•Œì•„ì„œ ìžë°” ì½”ë“œë¥¼ í™•ì¸í•´ .class íŒŒì¼ì„ ì‹¤í–‰í•˜ê³  html íŒŒì¼ë¡œ response(ì‘ë‹µ)í•œë‹¤. <br>
+ServletÀº java ÆÄÀÏÀ» ÀÌ¿ëÇØ¼­ jsp¿Í °°Àº µ¿ÀÛÀ» ÇÑ´Ù 
+
+<br>jsp ÆÄÀÏÀ» ÅëÇØ request(¿äÃ»)À» ÇÏ¸é À¥ ÄÁÅ×ÀÌ³Ê(ÅèÄÏ)ÀÌ ¾Ë¾Æ¼­ ÀÚ¹Ù ÄÚµå¸¦ È®ÀÎÇØ .class ÆÄÀÏÀ» ½ÇÇàÇÏ°í html ÆÄÀÏ·Î response(ÀÀ´ä)ÇÑ´Ù. <br>
 *.jsp --> tomcat --> *.html<br>
 C:\tomcat10\work\Catalina\localhost\ROOT\org\apache\jsp<br>
-ì•ˆì— .java , .class íŒŒì¼ í™•ì¸
+¾È¿¡ .java , .class ÆÄÀÏ È®ÀÎ
 
-## 4ì›” 06ì¼
-ì¸í”„ëŸ° í†µí•´ ì„œë¸”ë¦¿ê³¼ jsp ê´€ë ¨ ê³µë¶€ ì‹œìž‘ ì˜¤ëŠ˜ì€ ì›¹ í”„ë¡œê·¸ëž˜ë°ì— ê´€í•œ ê°„ë‹¨í•œ ì´ë¡ <br>
-í”„ë¡œí† ì½œ(Protocol)<br>
-í†µì‹ ì„ í•˜ê¸°ìœ„í•œ ê·œì•½ìœ¼ë¡œ http,ftp,smtp,popë“±ì´ ìžˆë‹¤<br>
-http: ê¸€ê³¼ íƒìŠ¤íŠ¸ì™€ ê·¸ë¦¼ì´ í•˜ì´í¼ë§í¬ë¡œ í†µì‹ í•˜ëŠ”ê±°
-<br>ftp: íŒŒì¼ë¡œ í†µì‹ , smtp,pop:ë©”ì¼ ê´€ë ¨ í†µì‹ 
+## 4¿ù 06ÀÏ
+ÀÎÇÁ·± ÅëÇØ ¼­ºí¸´°ú jsp °ü·Ã °øºÎ ½ÃÀÛ ¿À´ÃÀº À¥ ÇÁ·Î±×·¡¹Ö¿¡ °üÇÑ °£´ÜÇÑ ÀÌ·Ð<br>
+ÇÁ·ÎÅäÄÝ(Protocol)<br>
+Åë½ÅÀ» ÇÏ±âÀ§ÇÑ ±Ô¾àÀ¸·Î http,ftp,smtp,popµîÀÌ ÀÖ´Ù<br>
+http: ±Û°ú ÅÃ½ºÆ®¿Í ±×¸²ÀÌ ÇÏÀÌÆÛ¸µÅ©·Î Åë½ÅÇÏ´Â°Å
+<br>ftp: ÆÄÀÏ·Î Åë½Å, smtp,pop:¸ÞÀÏ °ü·Ã Åë½Å
 <br><br>
-ip: íƒë°° ì‹œí‚¬ë•Œ ë³´ë©´ ë„ë¡œëª… ì£¼ì†Œ ex)**ì‹œ @@êµ¬ ##ë¡œ <br>port : ìƒì„¸ ì£¼ì†Œ ex)ë™ í˜¸ìˆ˜
+ip: ÅÃ¹è ½ÃÅ³¶§ º¸¸é µµ·Î¸í ÁÖ¼Ò ex)**½Ã @@±¸ ##·Î <br>port : »ó¼¼ ÁÖ¼Ò ex)µ¿ È£¼ö
 <br> http://www.google.com:80/index.html
-<br> í”„ë¡œí† ì½œ://ipì£¼ì†Œ:í¬íŠ¸ë²ˆí˜¸/ê²½ë¡œ
+<br> ÇÁ·ÎÅäÄÝ://ipÁÖ¼Ò:Æ÷Æ®¹øÈ£/°æ·Î
