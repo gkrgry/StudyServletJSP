@@ -1,4 +1,16 @@
 # 서블릿 및 jsp 공부
+
+## 4월 18일
+##### Servlet 생명주기
+@PostConstruct -> init() -> service , doGet() -> destroy() -> @PreDestroy 보통 service보다 doGet 대부분 <br>
+init() 실행할때 한번 doGet()을 호출되면 여러번 destroy() 끝날때 한번 (ex DB연결 종료) <br>
+error : build path src 파일로 인데 나는 src 파일이름으로 안되있어서 변경하여 해결
+##### form 데이터 처리
+웹 브라우저에서 html form 테그 로 부터 유저 데이터를 request 객체로 묶어 서버가 받는다<br>
+form method = "get" 이면 doGet() 메소드가 받고 method="post"면 doPost()로 받으며 doGet()이 defalut이다. <br>
+get 메소드는 url에 노출되어 웹서버로 전송 즉 보안이 약함 post 메소드는 매핑 정보만 노출하여 보안에 강함 <br>
+그럼 왜 post 메소드만 쓰지 않을까??
+
 ## 4월 15일 Servlet 맵핑, github error
 servlet 맵핑 : 서블릿을 구분하기 위해 path를 간단하게 원하는데로 만드는것 <br>
 맵핑을 하는 이유는 보안에 취약하고 복잡한 url을 간결하게 바꿀수 있어서
