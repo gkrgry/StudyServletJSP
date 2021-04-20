@@ -1,5 +1,14 @@
 # 서블릿 및 jsp 공부
 
+## 4월 20일
+##### jsp 스크립트
+servlet 자바 파일로 바로 컴파일 되어 클래스파일로 변경 하지만 jsp는 톰캣을 통해 jsp파일이 java파일로 변경되고 다음 컴파일 된다<br>
+jsp 지시어: <% page 속성="속성 값" 페이지 기본 설정%> , <% incloud file="파일명" 외부 파일 가져오기%> <br>
+<% taglib uri="uir" prefix="네임스페이스 명"%>
+##### jsp 태그
+jsp 안에서 <%! %> 안에 선언된건 전역변수 <% %> 는 그냥 지역 변수 
+
+
 ## 4월 18일
 ##### Servlet 생명주기
 @PostConstruct -> init() -> service , doGet() -> destroy() -> @PreDestroy 보통 service보다 doGet 대부분 <br>
