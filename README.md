@@ -1,4 +1,15 @@
 # 서블릿 및 jsp 공부
+## 4월 23일
+##### Servlet 데이터 공유
+JSP 와 비슷하게 config , context 를 배움
+1page 에서 getServletContext().setAttribute()로 저장하고 2page getAttribute()로 불러올떄 널값이 자꾸 나와서 왜그런가 고민하고 있었는데 2page에서만 실행하고 있어서 그런거 였다 1page를 들리고 2page를 실행하니 해결!!
+
+##### jsp 내장 객체
+config 객체 : 해당 servlet에서만 데이터를 공유하는 방법 <br>
+web.xml ex)<init-param><param-name></param-name><param-value>admin</param-value></init-param> 에서 getInitParameter() 헤서 jsp로 가져오는것 String adminId = config.getInitParameter("");
+application 객체 : 어플리케이션 전체에 데이터를 공유하는 방법 <br>
+<context-param><param-name>imgDir</param-name><param-value>/upload/img</param-value></context-param>
+
 
 ## 4월 20일
 ##### jsp 스크립트
