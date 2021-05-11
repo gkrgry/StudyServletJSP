@@ -1,4 +1,57 @@
 # 서블릿 및 jsp 공부
+
+## 5월 11일
+##### 한글처리
+post 방식: 각 서블릿 jsp 마다 request.setCharacterEncoding("utf-8") 추가
+```
+서블릿은 doGet, doPost메소드 안에 추가
+request.setCharacterEncoding("utf-8");
+response.setContentType("text/html; utf-8")
+jsp 맨첫줄에 <% request.setCharacterEncoding("utf-8"); %> 추가
+```
+get 방식: server.xml에 <Connector URIEncoding="utf-8" /> 추가
+```
+60번째 줄에  URIEncoding="UTF-8"  추가<Connector connectionTimeout="20000" port="8090" protocol="HTTP/1.1" redirectPort="8443"/> 
+
+<Connector URIEncoding="UTF-8" connectionTimeout="20000" port="8090" protocol="HTTP/1.1" redirectPort="8443"/>
+```
+
+##### Filter
+post 방식이 모든 서블릿,jsp에 코드 추가하기엔 귀찮아 지니 대체 하는법
+필터라는 클래스를 따로 만들어야한다.
+```
+request.setCharacterEncoding("utf-8");
+```
+위에 코드를 doFilter 메소드안에 집어넣고
+
+
+wew.xml 에 추가
+```
+<filter>
+  		<filter-name>tempFilter</filter-name>
+  		<filter-class>com.daelim.session.TempFilter</filter-class>
+  	</filter>
+  	<filter-mapping>
+  		<filter-name>tempFilter</filter-name>
+  		<url-pattern>/*</url-pattern>
+  	</filter-mapping>
+```
+com.daelim.session.TempFilter 란 파일을 모든 파일에 적용하겠다라는 뜻
+## 4월 29일
+##### Session
+session이란? 서버랑 클라이언트를 유지시키는 방법중 하나이지만 쿠키랑 다르게 서버에서 활용한다.
+
+
+## 4월 26일
+##### cookie
+cookie란 클라이언트와 서버의 연결을 유지시키는 방법중 하나이다. 쿠키 부스러기 처럼 흔적을 남겨서 쿠키라는 이름을 가지게 되었다. <br>
+http 방식은 한번 요청과 응답을 하고나면 끊기기 때문에 서버 1개 클라이언트 여러개 상태로 연결되어 있어 클라이언트들이 효율적으로 연결을 끊어서 클라이언트에 쿠키로 저장해 기존에 데이터를 보관하는 것이다.
+쿠키는 보안에 취약 Why? 클라이언트에 저장되기 때문에 개인이 보안하기 때문 <br>
+```
+Cookie[] cookies = requset.getCookies() //쿠키를 가져올려면 필수;
+```
+
+
 ## 4월 23일
 ##### Servlet 데이터 공유
 JSP 와 비슷하게 config , context 를 배움
